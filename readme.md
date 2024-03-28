@@ -12,6 +12,6 @@ This code may not be the best code as I am a beginner. You would mostly need som
 2. Install other requirements using pip install commands.
 3. Update the config.ini for user specific data
 
-![screenshot](https://github.com/whity1234/Finvasia-Tradetool/blob/main/Screenshot.JPG)
+![screenshot](https://github.com/whity1234/Finvasia-Tradetool/blob/main/Screenshot.png)
 
 # USE AT YOUR OWN RISK!!
