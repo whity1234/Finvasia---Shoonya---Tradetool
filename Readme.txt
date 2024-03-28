@@ -6,3 +6,6 @@ Steps to run this tool:
 1. You need to install pre-requsites from https://github.com/Shoonya-Dev/ShoonyaApi-py/blob/master/requirements.txt
 2. Install other requirements using pip install commands.
 3. Update the config.ini for user specific data
+
+
+https://github.com/whity1234/Finvasia-Tradetool/blob/main/Screenshot.JPG
