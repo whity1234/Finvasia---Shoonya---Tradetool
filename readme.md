@@ -1,4 +1,5 @@
-# Disclaimer USE AT YOUR OWN RISK!!
+# Disclaimer 
+
 I am not a very good coder. I have tried to build a tool, for my own trading purpose.
 This tool needs extensive testing before using it and there is no gurantee, that it will work 100%
 This code may not be the best code as I am a beginner. You would mostly need some python coding experience, to understand what is happening in the code.
