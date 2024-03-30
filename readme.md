@@ -10,6 +10,9 @@ This code may not be the best code as I am a beginner. You would mostly need som
 
 This tool is mainly built for option selling.
 
+This tool needs integration with Finvasia API, to function.
+
+
 # KNOWN ISSUES
 At depths of above 8, delays in websocket data was noticed. This is due to the code quality issue.
 
