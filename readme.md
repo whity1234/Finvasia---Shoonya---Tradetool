@@ -37,7 +37,7 @@ I dont commit to supporting any help requests for this code.
 1. You need to install pre-requsites from https://github.com/Shoonya-Dev/ShoonyaApi-py/blob/master/requirements.txt
 2. Install other requirements using pip install commands.
 3. Update the config.ini for user specific data
-4. Use the login button to Login and 
+4. Use the login button to Login.
 5. Once the index is selected, it by default switches to the current weekly expiry automatically.
 6. If required to switch to any other expiry, it needs to be selected from the expiries drop down menu, as given above.
 7. Once all needed properties are selected, click on Update button.
