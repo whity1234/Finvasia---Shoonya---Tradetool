@@ -6,14 +6,14 @@ This code may not be the best code as I am a beginner. You would mostly need som
 
 # USE AT YOUR OWN RISK!!
 
-#NOTE
+# NOTE
 
 This tool is mainly built for option selling.
 
 # KNOWN ISSUES
 At depths of above 8, delays in websocket data was noticed. This is due to the code quality issue.
 
-#SUPPORT
+# SUPPORT
 I dont commit to supporting any help equests for this code.
 
 # Steps to run this tool:
