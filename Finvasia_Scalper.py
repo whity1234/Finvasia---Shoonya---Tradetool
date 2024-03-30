@@ -1899,6 +1899,10 @@ def setuprow_hedge(ATM_strike,index_symbol):
                 else:
                     away = 15
 
+            #Sat and Sun
+            if dt.weekday() == 5 or dt.weekday() == 6 :
+                away = 8
+
 
 
             print("AWAY2", away)
