@@ -265,7 +265,6 @@ def Login():  # Login function get the api login + username and cash margin
         print("Generating API Keys")
         api_key = fetch_api_keys(config.get("CRED", "user"),config.get("CRED", "prism_pass"))
         print(api_key)
-        write_to_github_file(owner, repo, path, token, api_key)
         param = config["CRED"]
         param["api_key"] = api_key
         config.set("CRED", "api_key",api_key)
@@ -320,8 +319,6 @@ style.theme_use("alt")
 #style.theme_use("winnative")  ## enable this for windows
 style.configure('TButton', background = '#808080', foreground = 'black', width = 8)
 style.map('TButton', background=[('active','red')])
-#root.tk.call("wm", "iconphoto", root._w, tk.PhotoImage(file="richdotin.png"))
-# root.iconbitmap(r'c:\Users\SN\exe\ShoonyaApi-py\richdotcom.ico')
 
 
 
@@ -1287,16 +1284,6 @@ def Make_API_Sell(token,tsym, qty):
     #print(max_size,round_num)
     #print("in API Sell")
 
-    #print(token, "Sell ", qty)
-    # print(api.get_quotes('NSE', 'Nifty Bank'))
-    #print ("Sell order placed for ", tsym, " for ", qty)
-
-
-    # res = api.place_order(buy_or_sell='S', product_type='M',
-    #             exchange=exch, tradingsymbol=tsym,
-    #             quantity=qty, discloseqty=0, price_type='MKT',
-    #             retention='DAY', remarks='my_order_001')
-
     if index_symbol=="BANKNIFTY":
         #max_size = 90
         price=0.0
@@ -1446,23 +1433,10 @@ def setuprow(ATM_strike):
     global First_strike, row, row_PE,ce_token, pe_token, lotsize_BN,index_symbol,distance
     row = {}
     row_PE = {}
-    # ce_activeqty = 0
-    # pe_active_qty = 0
 
     First_strike = 0
-
-    #time.sleep(5)
-    #BN_ATM_fn = 40800
-    #print("In setuprow")
     far = int(round(depth / 2))
-    #print("far:", far)
-    #global First_strike, lotsize,row,row_PE
-    
-    #print("First strike:", First_strike)
-
     row_df = fetch_symbolcodes(expiry_date)
-    #print(row_df)
-
     if index_symbol=="BANKNIFTY" or "BSXOPT" or "BKXOPT":
         First_strike = int(ATM_strike) - (distance * far)
         # print(First_strike)
@@ -1473,9 +1447,7 @@ def setuprow(ATM_strike):
             #print("Row # is:", i)
             strike_main = str(First_strike + (distance * (i - 1)))
             strike_CE = str(First_strike + (distance * (i - 1))) + "CE"
-            
-            # print("First strike is:",strike_main)
-            # print("First CE strike is:",strike_CE)
+
             row_df = (row_df[(row_df['StrikePrice'] == strike_CE)])
             #print(strike_CE)
             # print(row_df)
@@ -1483,12 +1455,6 @@ def setuprow(ATM_strike):
             #print(token_CE)
             tsym_CE = row_df.iloc[0]['TradingSymbol']
             lotsize = row_df.iloc[0]['LotSize']
-            #print(token_CE,",",tsym_CE)
-            # print("Lot size:",lotsize)
-
-            # print("Token CE:",token_CE)
-            # print("TSYM CE:",tsym_CE)
-            
 
             row[i] = {
                 "strike": strike_main,
@@ -2906,19 +2872,6 @@ def Refresh_LTPs():
 
     #print("in Refresh_LTPs",datetime.now())
 
-    # for i in range(1, depth+2):
-    #     token = str(row[i]["ce_token"])
-    #     row[i]["ce_LTP"] = live_data[f'{token}']['ltp']
-
-    # for i in range(1, depth+2):
-    #     token = str(row_PE[i]["pe_token"])
-    #     row_PE[i]["pe_LTP"] = live_data[f'{token}']['ltp']
-
-    # for i in range(1, depth_hedge):
-    #     print(row_CE_hedge[i]["ce_tsym"],row_CE_hedge[i]["ce_token"])
-    #     print(row_PE_hedge[i]["pe_tsym"],row_PE_hedge[i]["pe_token"])
-
-
     for i in range(1, depth_hedge):
 
         token4 = str(row_CE_hedge[i]["ce_token"])
@@ -2969,22 +2922,6 @@ def cancel_order():
         ret = api.cancel_order(orderno=int(ord_po.iloc[x]["norenordno"]))
 
 
-
-
-    #if 'prd' in sq_po.columns:
-        #sq_po.drop(sq_po[sq_po['prd'] == "I"].index, inplace = True)
-        #print("Cancel")
-
-    #ord_po.to_csv("ord.csv")
-    
-    #sq_po = sq_po.sort_values("netqty")
-
-
-
-    #print(sq_po)
-    #sq_po.to_csv("123.csv")
-
-    #return sq_po
 
 def Refresh_qtys():
     sq_po = fetch_positions()
